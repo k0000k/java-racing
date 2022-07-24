@@ -7,7 +7,7 @@ public class RacingStatus {
     private final int racingCount;
     private final String[] racingCars;
 
-    RacingStatus(int carCount, int racingCount) {
+    public RacingStatus(int carCount, int racingCount) {
         this.carCount = carCount;
         this.racingCount = racingCount;
         racingCars = new String[carCount];

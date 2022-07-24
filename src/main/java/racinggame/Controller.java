@@ -5,6 +5,7 @@ public class Controller {
         InputView input = new InputView();
         RacingStatus car = input.inputCar();
         Racing race = new Racing();
-        race.runRace(car);
+        RandomGo randomGo = new RandomGo();
+        race.runRace(car, randomGo.isMovable());
     }
 }
