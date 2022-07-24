@@ -10,7 +10,6 @@ public class InputView {
         System.out.println("시도 할 횟수는 몇 회 인가요?");
         int racingCount = scanner.nextInt();
 
-        RacingStatus car = new RacingStatus(carCount, racingCount);
-        return car;
+        return new RacingStatus(carCount, racingCount);
     }
 }

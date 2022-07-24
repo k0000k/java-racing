@@ -1,5 +1,5 @@
 package racinggame;
 
-interface MoveCase{
+interface MoveCase {
     boolean isMovable();
 }
