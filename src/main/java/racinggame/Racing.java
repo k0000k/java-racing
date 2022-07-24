@@ -1,7 +1,15 @@
+package racinggame;
+
 import java.util.Random;
 
 public class Racing {
-    public void runRace(Car car) {
+    private Random random;
+
+    Racing(){
+         this.random = new Random();
+    }
+
+    public void runRace(RacingStatus car) {
         ResultView resultView = new ResultView();
         for (int i = 0; i < car.getRacingCount(); ++i) {
             resultView.printRace(car);
@@ -9,9 +17,8 @@ public class Racing {
         }
     }
 
-    public void decideStop(Car car) {
+    public void decideStop(RacingStatus car) {
         for (int j = 0; j < car.getCarCount(); j++) {
-            Random random = new Random();
             if (random.nextInt(10) >= 4) {
                 car.go(j);
             }

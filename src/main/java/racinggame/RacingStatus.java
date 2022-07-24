@@ -1,11 +1,13 @@
+package racinggame;
+
 import java.util.Arrays;
 
-public class Car {
+public class RacingStatus {
     private final int carCount;
     private final int racingCount;
     private final String[] racingCars;
 
-    Car(int carCount, int racingCount) {
+    RacingStatus(int carCount, int racingCount) {
         this.carCount = carCount;
         this.racingCount = racingCount;
         racingCars = new String[carCount];
