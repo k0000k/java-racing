@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 import racinggame.AlwaysGo;
+import racinggame.InputValue;
 import racinggame.RunRacing;
 import racinggame.RacingStatus;
 
@@ -8,34 +9,38 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class RunRacingTest {
 
-    private final RacingStatus testRacing1 = new RacingStatus(3, 5);
-    private final RacingStatus testRacing2 = new RacingStatus(5, 3);
+    private final InputValue testRacingInput1 = new InputValue(3, 5);
+    RacingStatus racingStatus1 = new RacingStatus(testRacingInput1);
+
+    private final InputValue testRacingInput2 = new InputValue(5, 3);
+    RacingStatus racingStatus2 = new RacingStatus(testRacingInput2);
+
 
     @Test
     @DisplayName("레이싱 시작 상태 테스트")
-    public void randomNumberTest() {
-        String[] testCarList1 = new String[]{"-", "-", "-"};
-        String[] testCarList2 = new String[]{"-", "-", "-", "-", "-"};
+    public void racingStartTest() {
+        int[] testCarList1 = new int[]{1, 0, 0, 0, 0};
+        int[] testCarList2 = new int[]{1, 0, 0};
 
-        assertThat(testRacing1.getRacingCars()).isEqualTo(testCarList1);
-        assertThat(testRacing2.getRacingCars()).isEqualTo(testCarList2);
+        assertThat(racingStatus1.getRacingCars()[0].getPositionRecords()).isEqualTo(testCarList1);
+        assertThat(racingStatus2.getRacingCars()[0].getPositionRecords()).isEqualTo(testCarList2);
     }
 
     @Test
     @DisplayName("이동 횟수 테스트")
     public void moveTest() {
 
-        String[] testCarList1 = new String[]{"------", "------", "------"};
-        String[] testCarList2 = new String[]{"----", "----", "----", "----", "----"};
+        int[] testCarList1 = new int[]{1, 2, 3, 4, 5};
+        int[] testCarList2 = new int[]{1, 2, 3};
 
-        RunRacing race = new RunRacing();
+        RunRacing runRacing = new RunRacing();
         AlwaysGo alwaysGo = new AlwaysGo();
 
-        race.runRace(testRacing1, alwaysGo);
-        race.runRace(testRacing2, alwaysGo);
+        runRacing.runRace(racingStatus1, alwaysGo);
+        runRacing.runRace(racingStatus2, alwaysGo);
 
-        assertThat(testRacing1.getRacingCars()).isEqualTo(testCarList1);
-        assertThat(testRacing2.getRacingCars()).isEqualTo(testCarList2);
+        assertThat(racingStatus1.getRacingCars()[0].getPositionRecords()).isEqualTo(testCarList1);
+        assertThat(racingStatus2.getRacingCars()[0].getPositionRecords()).isEqualTo(testCarList2);
     }
 
 }

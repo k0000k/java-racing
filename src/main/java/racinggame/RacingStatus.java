@@ -1,32 +1,23 @@
 package racinggame;
 
-import java.util.Arrays;
-
 public class RacingStatus {
-    private final int carCount;
     private final int racingCount;
-    private final String[] racingCars;
+    private final Car[] racingCars;
 
-    public RacingStatus(int carCount, int racingCount) {
-        this.carCount = carCount;
-        this.racingCount = racingCount;
-        racingCars = new String[carCount];
-        Arrays.fill(racingCars, "-");
+    public RacingStatus(InputValue inputValue) {
+        int carCount = inputValue.getCarCount();
+        this.racingCount = inputValue.getRacingCount();
+        this.racingCars = new Car[carCount];
+        for (int i = 0; i < carCount; i++) {
+            racingCars[i] = new Car(racingCount);
+        }
     }
 
     public int getRacingCount() {
         return racingCount;
     }
 
-    public int getCarCount() {
-        return carCount;
-    }
-
-    public String[] getRacingCars() {
+    public Car[] getRacingCars() {
         return racingCars;
-    }
-
-    public void go(int num) {
-        racingCars[num] += "-";
     }
 }

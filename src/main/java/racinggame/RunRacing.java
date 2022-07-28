@@ -2,19 +2,15 @@ package racinggame;
 
 public class RunRacing {
 
-    public void runRace(RacingStatus car, MoveCase moveCase) {
-        ResultView resultView = new ResultView();
-        for (int i = 0; i < car.getRacingCount(); ++i) {
-            resultView.printRace(car);
-            decideStop(car, moveCase);
+    public void runRace(RacingStatus racingStatus, MoveCase moveCase) {
+        for (int i = 1; i < racingStatus.getRacingCount(); i++) {
+            decideStop(racingStatus.getRacingCars(), moveCase, i);
         }
     }
 
-    private void decideStop(RacingStatus car, MoveCase moveCase) {
-        for (int j = 0; j < car.getCarCount(); j++) {
-            if (moveCase.isMovable()) {
-                car.go(j);
-            }
+    private void decideStop(Car[] racingCars, MoveCase moveCase, int raceCount) {
+        for (Car car : racingCars) {
+            car.move(moveCase.isMovable(), raceCount);
         }
     }
 }
