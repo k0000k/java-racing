@@ -10,7 +10,11 @@ public class Controller {
         RandomGo randomGo = new RandomGo();
         runRacing.runRace(racingStatus, randomGo);
 
+        Winner winner = new Winner();
+        winner.selectWinner(racingStatus);
+
         ResultView resultView = new ResultView();
         resultView.printRace(racingStatus);
+        resultView.printWinner(winner);
     }
 }

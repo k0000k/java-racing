@@ -3,8 +3,10 @@ package racinggame;
 public class Car {
     private final int[] positionRecords;
     private final String name;
+    private final int racingCount;
 
     Car(int racingCount, String name) {
+        this.racingCount = racingCount;
         this.positionRecords = new int[racingCount];
         this.name = name;
         positionRecords[0] = 1;
@@ -24,5 +26,9 @@ public class Car {
 
     public String getName() {
         return name;
+    }
+
+    public int getPosition() {
+        return positionRecords[racingCount - 1];
     }
 }

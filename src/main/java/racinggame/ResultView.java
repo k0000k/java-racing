@@ -14,4 +14,8 @@ public class ResultView {
             System.out.println(car.getName()+": "+result);
         }
     }
+
+    public void printWinner(Winner winner){
+        System.out.println(winner.getWinnersName()+"가 최종 우승입니다.");
+    }
 }
