@@ -2,22 +2,19 @@ package racinggame;
 
 public class RacingStatus {
     private final int racingCount;
-    private final Car[] racingCars;
+    private final Cars cars;
 
     public RacingStatus(InputValue inputValue) {
         int carCount = inputValue.getCarCount();
         this.racingCount = inputValue.getRacingCount();
-        this.racingCars = new Car[carCount];
-        for (int i = 0; i < carCount; i++) {
-            racingCars[i] = new Car(racingCount);
-        }
+        this.cars = new Cars(carCount);
     }
 
     public int getRacingCount() {
         return racingCount;
     }
 
-    public Car[] getRacingCars() {
-        return racingCars;
+    public Cars getCars() {
+        return cars;
     }
 }

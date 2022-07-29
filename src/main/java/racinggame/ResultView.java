@@ -9,8 +9,8 @@ public class ResultView {
     }
 
     public void printCars(int raceCount, RacingStatus racingStatus) {
-        for (Car car : racingStatus.getRacingCars()) {
-            String result = "-".repeat(car.getPositionRecords()[raceCount]);
+        for (Car car : racingStatus.getCars().getRacingCars()) {
+            String result = "-".repeat(car.getPositionRecords().get(raceCount));
             System.out.println(result);
         }
     }

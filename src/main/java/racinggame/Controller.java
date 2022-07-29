@@ -4,13 +4,13 @@ public class Controller {
     public static void main(String[] args) {
         InputView inputView = new InputView();
         InputValue inputValue = inputView.inputCar();
-        RacingStatus racingStatus = new RacingStatus(inputValue);
 
-        RunRacing runRacing = new RunRacing();
         RandomGo randomGo = new RandomGo();
-        runRacing.runRace(racingStatus, randomGo);
+        RacingGame racingGame = new RacingGame(inputValue, randomGo);
+
+        racingGame.runRace();
 
         ResultView resultView = new ResultView();
-        resultView.printRace(racingStatus);
+        resultView.printRace(racingGame.getRacingStatus());
     }
 }

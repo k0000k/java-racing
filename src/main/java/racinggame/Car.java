@@ -1,22 +1,26 @@
 package racinggame;
 
-public class Car {
-    private final int[] positionRecords;
+import java.util.ArrayList;
 
-    Car(int racingCount) {
-        this.positionRecords = new int[racingCount];
-        positionRecords[0] = 1;
+public class Car {
+    private final ArrayList<Integer> positionRecords;
+    private final int INITIAL_POSITION_OF_CAR = 1;
+
+    Car() {
+        this.positionRecords = new ArrayList<>();
+        positionRecords.add(INITIAL_POSITION_OF_CAR);
     }
 
-    public void move(boolean go, int raceCount) {
+    public void move(boolean go) {
+        int beforePosition = positionRecords.get(positionRecords.size() - 1);
         if (go) {
-            positionRecords[raceCount] = positionRecords[raceCount - 1] + 1;
+            positionRecords.add(++beforePosition);
             return;
         }
-        positionRecords[raceCount] = positionRecords[raceCount - 1];
+        positionRecords.add(beforePosition);
     }
 
-    public int[] getPositionRecords() {
+    public ArrayList<Integer> getPositionRecords() {
         return positionRecords;
     }
 }
