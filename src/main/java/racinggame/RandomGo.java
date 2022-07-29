@@ -5,7 +5,7 @@ import java.util.Random;
 public class RandomGo implements MoveCase {
     private final Random random;
 
-    RandomGo() {
+    public RandomGo() {
         this.random = new Random();
     }
 

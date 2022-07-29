@@ -6,7 +6,7 @@ public class Car {
     private final ArrayList<Integer> positionRecords;
     private final int INITIAL_POSITION_OF_CAR = 1;
 
-    Car() {
+    public Car() {
         this.positionRecords = new ArrayList<>();
         positionRecords.add(INITIAL_POSITION_OF_CAR);
     }
