@@ -11,7 +11,7 @@ public class ResultView {
     public void printCars(int raceCount, RacingStatus racingStatus) {
         for (Car car : racingStatus.getRacingCars()) {
             String result = "-".repeat(car.getPositionRecords()[raceCount]);
-            System.out.println(result);
+            System.out.println(car.getName()+": "+result);
         }
     }
 }
