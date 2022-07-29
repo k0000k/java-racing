@@ -5,7 +5,7 @@ public class RacingGame {
     private final MoveCase moveCase;
     private final Move move;
 
-    public RacingGame(InputValue inputValue, MoveCase moveCase){
+    public RacingGame(InputValue inputValue, MoveCase moveCase) {
         this.racingStatus = new RacingStatus(inputValue);
         this.moveCase = moveCase;
         this.move = new Move();
