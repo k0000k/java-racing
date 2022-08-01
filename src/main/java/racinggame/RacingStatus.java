@@ -1,7 +1,5 @@
 package racinggame;
 
-import java.util.HashMap;
-
 public class RacingStatus {
     private final int racingCount;
     private final Cars cars;

@@ -9,7 +9,7 @@ public class Car {
     }
 
     public void move(boolean go) {
-        if (go){
+        if (go) {
             position++;
         }
     }

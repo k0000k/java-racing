@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class ResultView {
     public void printRace(HashMap<Integer, Record> records) {
-        for(Record record: records.values()){
+        for (Record record : records.values()) {
             printCars(record);
             System.out.println();
         }

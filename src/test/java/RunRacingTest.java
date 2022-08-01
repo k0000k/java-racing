@@ -4,7 +4,6 @@ import org.junit.jupiter.api.DisplayName;
 import racinggame.InputValue;
 import racinggame.RacingGame;
 import racinggame.AlwaysGo;
-import racinggame.Record;
 
 import java.util.ArrayList;
 import java.util.Arrays;
