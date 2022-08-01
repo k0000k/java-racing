@@ -11,6 +11,6 @@ public class Controller {
         racingGame.runRace();
 
         ResultView resultView = new ResultView();
-        resultView.printRace(racingGame.getRacingStatus());
+        resultView.printRace(racingGame.getRecords());
     }
 }
