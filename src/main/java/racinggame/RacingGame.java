@@ -27,8 +27,4 @@ public class RacingGame {
     public HashMap<Integer, Record> getRecords() {
         return records;
     }
-
-    public RacingStatus getRacingStatus() {
-        return racingStatus;
-    }
 }

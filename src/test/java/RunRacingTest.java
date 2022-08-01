@@ -4,6 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import racinggame.InputValue;
 import racinggame.RacingGame;
 import racinggame.AlwaysGo;
+import racinggame.Record;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,30 +23,18 @@ class RunRacingTest {
 
 
     @Test
-    @DisplayName("레이싱 시작 상태 테스트")
-    public void racingStartTest() {
-        ArrayList<Integer> testCarList = new ArrayList<>(Arrays.asList(1));
-
-        assertThat(racingGame1.getRacingStatus().getCars().getRacingCars().get(0).getPositionRecords())
-                .isEqualTo(testCarList);
-        assertThat(racingGame2.getRacingStatus().getCars().getRacingCars().get(0).getPositionRecords())
-                .isEqualTo(testCarList);
-
-    }
-
-    @Test
     @DisplayName("이동 횟수 테스트")
     public void moveTest() {
 
-        ArrayList<Integer> testCarList1 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
-        ArrayList<Integer> testCarList2 = new ArrayList<>(Arrays.asList(1, 2, 3));
+        ArrayList<Integer> testCarList1 = new ArrayList<>(Arrays.asList(5, 5, 5));
+        ArrayList<Integer> testCarList2 = new ArrayList<>(Arrays.asList(3, 3, 3, 3, 3));
 
         racingGame1.runRace();
         racingGame2.runRace();
 
-        assertThat(racingGame1.getRacingStatus().getCars().getRacingCars().get(0).getPositionRecords())
+        assertThat(racingGame1.getRecords().get(4).getRecord())
                 .isEqualTo(testCarList1);
-        assertThat(racingGame2.getRacingStatus().getCars().getRacingCars().get(0).getPositionRecords())
+        assertThat(racingGame2.getRecords().get(2).getRecord())
                 .isEqualTo(testCarList2);
     }
 }
