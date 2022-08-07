@@ -8,10 +8,8 @@ public class Car {
         this.position = INITIAL_POSITION_OF_CAR;
     }
 
-    public void move(boolean go) {
-        if (go) {
-            position++;
-        }
+    public void move() {
+        position++;
     }
 
     public int getPosition() {
