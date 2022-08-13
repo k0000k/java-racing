@@ -4,15 +4,13 @@ import java.util.HashMap;
 
 public class RacingGame {
     private final Cars cars;
-    //private final MoveCase moveCase;
     private final HashMap<Integer, Record> records;
     private final int racingCount;
 
     public RacingGame(InputValue inputValue) {
         this.cars = new Cars(inputValue.getCarCount());
-        //this.moveCase = moveCase;
         this.records = new HashMap<>();
-        this.racingCount=inputValue.getRacingCount();
+        this.racingCount = inputValue.getRacingCount();
     }
 
     public void runRace(MoveCase moveCase) {

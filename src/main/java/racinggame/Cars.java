@@ -22,7 +22,7 @@ public class Cars {
 
     public void decideMove(MoveCase moveCase) {
         for (Car car : racingCars) {
-            if(moveCase.isMovable()){
+            if (moveCase.isMovable()) {
                 car.move();
             }
         }
