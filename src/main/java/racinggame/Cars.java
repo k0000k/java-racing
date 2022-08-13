@@ -12,7 +12,19 @@ public class Cars {
         }
     }
 
-    public ArrayList<Car> getRacingCars() {
-        return racingCars;
+    public Record makeRecord() {
+        ArrayList<Integer> record = new ArrayList<>();
+        for (Car car : racingCars) {
+            record.add(car.getPosition());
+        }
+        return new Record(record);
+    }
+
+    public void decideMove(MoveCase moveCase) {
+        for (Car car : racingCars) {
+            if(moveCase.isMovable()){
+                car.move();
+            }
+        }
     }
 }

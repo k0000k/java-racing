@@ -6,9 +6,9 @@ public class Controller {
         InputValue inputValue = inputView.inputCar();
 
         RandomGo randomGo = new RandomGo();
-        RacingGame racingGame = new RacingGame(inputValue, randomGo);
+        RacingGame racingGame = new RacingGame(inputValue);
 
-        racingGame.runRace();
+        racingGame.runRace(randomGo);
 
         ResultView resultView = new ResultView();
         resultView.printRace(racingGame.getRecords());

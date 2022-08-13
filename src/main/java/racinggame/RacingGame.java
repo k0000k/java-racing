@@ -3,24 +3,23 @@ package racinggame;
 import java.util.HashMap;
 
 public class RacingGame {
-    private final RacingStatus racingStatus;
-    private final MoveCase moveCase;
-    private final Move move;
+    private final Cars cars;
+    //private final MoveCase moveCase;
     private final HashMap<Integer, Record> records;
+    private final int racingCount;
 
-    public RacingGame(InputValue inputValue, MoveCase moveCase) {
-        this.racingStatus = new RacingStatus(inputValue);
-        this.moveCase = moveCase;
-        this.move = new Move();
+    public RacingGame(InputValue inputValue) {
+        this.cars = new Cars(inputValue.getCarCount());
+        //this.moveCase = moveCase;
         this.records = new HashMap<>();
+        this.racingCount=inputValue.getRacingCount();
     }
 
-    public void runRace() {
-        for (int i = 0; i < racingStatus.getRacingCount(); ++i) {
-            Record record = new Record();
-            record.makeRecord(racingStatus.getCars());
-            this.records.put(i, record);
-            this.move.decideMove(racingStatus.getCars(), moveCase);
+    public void runRace(MoveCase moveCase) {
+        for (int i = 0; i < racingCount; ++i) {
+            Record record = cars.makeRecord();
+            records.put(i, record);
+            cars.decideMove(moveCase);
         }
     }
 
